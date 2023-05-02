@@ -78,7 +78,7 @@ function closeMenu (e) {
 let targetTheme;
 let storedTheme = localStorage.getItem('color-theme');
 if (storedTheme)
-    document.body.setAttribute('data-theme', storedTheme)
+    document.body.setAttribute('data-theme', storedTheme);
 
 const colorsDiv = document.querySelectorAll('.color-toggle')
 
