@@ -54,36 +54,7 @@ function portfolioItemDetails(portfolioItem) {
         portfolioItem.querySelector('.portfolio-item-details').innerHTML;
 }
 
-// Menu Pop-up
-/*
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('menu')) {
-        toggleMenuPopup();
-        document.querySelector('.menu-popup').scrollTo(0, 0)
-    }
-});
-
-function toggleMenuPopup() {
-    document.querySelector('.menu-popup').classList.toggle('open');
-    document.body.classList.toggle('hide-scrolling');
-    document.querySelector('.main').classList.toggle('fade-out');
-};
-
-//close icon
-document.querySelector('.close-menu').addEventListener('click', () => {
-    toggleMenuPopup()
-    document.querySelector('.menu-popup').scrollTo(0, 0)
-});
-//outside click
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('menu-inner')) {
-        toggleMenuPopup()
-        document.querySelector('.menu-popup').scrollTo(0, 0)
-    }
-})*/
-
 //Menu
-
 
 
 const menu = document.querySelector(".menu")
@@ -101,6 +72,31 @@ function openMenu (e) {
 function closeMenu (e) {
     menu.classList.remove("show")
 }
+
+
+//Toggle color
+let targetTheme;
+let storedTheme = localStorage.getItem('color-theme');
+if (storedTheme)
+    document.body.setAttribute('data-theme', storedTheme)
+
+const colorsDiv = document.querySelectorAll('.color-toggle')
+
+colorsDiv.forEach(toggleDiv => toggleDiv.addEventListener("click", (e) => {
+    if(e.target.classList.contains('circle-beige')) {
+        targetTheme = 'beige';
+        document.body.setAttribute('data-theme', 'beige');
+        localStorage.setItem('color-theme', targetTheme);
+    } else  if(e.target.classList.contains('circle-pink')) {
+        targetTheme = 'pink';
+        document.body.setAttribute('data-theme', 'pink');
+        localStorage.setItem('color-theme', targetTheme);
+    } else  if(e.target.classList.contains('circle-blue')) {
+        targetTheme = 'blue';
+        document.body.setAttribute('data-theme', 'blue');
+        localStorage.setItem('color-theme', targetTheme);
+    } 
+}))
 
 
 
