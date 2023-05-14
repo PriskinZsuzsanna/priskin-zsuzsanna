@@ -95,6 +95,10 @@ colorsDiv.forEach(toggleDiv => toggleDiv.addEventListener("click", (e) => {
         targetTheme = 'blue';
         document.body.setAttribute('data-theme', 'blue');
         localStorage.setItem('color-theme', targetTheme);
+    } else  if(e.target.classList.contains('circle-silver')) {
+        targetTheme = 'blue';
+        document.body.setAttribute('data-theme', 'silver');
+        localStorage.setItem('color-theme', targetTheme);
     } 
 }))
 

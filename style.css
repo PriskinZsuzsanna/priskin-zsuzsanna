@@ -2,13 +2,36 @@
     --toogle-dark-beige:linear-gradient(110deg, #faf0e6 0%, #d9b99b 45%, #d9b99bbc 100%);
     --toogle-dark-pink: linear-gradient(110deg,  rgba(226, 116, 245, 0.759) 0%, rgba(118, 34, 154, 0.69) 35%, rgba(176, 72, 197, 0.496) 100%);
     --toogle-dark-blue:linear-gradient(110deg, #6f86e2b9 0%, #1d3b96cb 45%, #576aa3e4 100%);
+    --toogle-silver-blue: linear-gradient(110deg, #92c4f6 0%, #92a1d4 45%, #2e71b4d8 100%);
+}
+
+[data-theme='silver']{
+    --light: linear-gradient(110deg, #e0e1e1c8 0%, #e0e1e1c8 45%, #e0e1e1c8 100%);
+    --light: linear-gradient(110deg, #92c4f6 0%, #e1e5f2 45%, #92c4f6a7 100%);
+    --dark: #abc7e6;
+    --skill-1: #656d8c;
+    --skill-2: #656d8c;
+    --contact-dark: #053769;
+    --linear: linear-gradient(110deg, #92c4f6 0%, #e1e5f2 35%, #92c4f6 100%);
+    --linear-alpha: linear-gradient(110deg, #92c4f6 0%, #e1e5f2 45%, #92c4f6a7 100%);
+    --color:  #45466a;
+    --color:  #053769;
+    --color:  #053769c2;
+    --white: #656d8c;
+    --hover: #222222a2;
+    --hover: #8f8c8ca2;
+    --about-card: linear-gradient(110deg, #92c4f6 0%, #e1e5f2 45%, #92c4f6a7 100%);
+    --about-hover-card: linear-gradient(110deg, #e1e5f2 0%, #92c4f6, 45%, #92c4f6a7 100%);
+    --footer-color:  #053769;
     
 }
+
 [data-theme='beige']{
     --light: linear-gradient(110deg, #faf0e6b9 0%, #d9b99bb1 45%, #d9b99b88 100%);
     --dark: #c9bcb0;
     --dark: #ecd3bb;
-    --skill: #3e2104d2;
+    --skill-1: #3e2104d2;
+    --skill-2: #3e2104d2;
     --toogle-dark-beige:linear-gradient(110deg, #faf0e6 0%, #d9b99b 45%, #d9b99bbc 100%);
     --toogle-dark-pink: linear-gradient(110deg,  rgba(226, 116, 245, 0.759) 0%, rgba(118, 34, 154, 0.69) 35%, rgba(176, 72, 197, 0.496) 100%);
     --toogle-dark-blue:linear-gradient(110deg, #6f86e2b9 0%, #1d3b96cb 45%, #576aa3e4 100%);
@@ -28,7 +51,8 @@
 [data-theme='pink'] {
     --light: linear-gradient(110deg, rgba(88, 9, 121, 1) 0%, rgba(218, 0, 255, 0.7287289915966386) 35%, rgba(193, 133, 183, 0.5494572829131652) 100%);
     --dark: #530853;
-    --skill: #530853;
+    --skill-1: #530853;
+    --skill-2: #f200ffcc;
     --contact-dark: #530853;
     --linear: linear-gradient(110deg, rgba(87, 9, 121, 0.836) 0%, rgba(218, 0, 255, 0.7287289915966386) 35%, rgba(193, 133, 183, 0.5494572829131652) 100%);
     --linear-alpha: linear-gradient(110deg,  rgb(225, 116, 245) 0%, rgb(118, 34, 154) 35%, rgba(176, 72, 197, 0.596) 100%);
@@ -43,7 +67,8 @@
 [data-theme='blue'] {
     --light:  linear-gradient(110deg, #6f86e2b9 0%, #1d3b96a3 45%, #576aa3e4 100%);
     --dark: #1d3b96;
-    --skill: #4fa8f1;
+    --skill-1: #4fa8f1;
+    --skill-2: #4fa8f1;
     --contact-dark: #4fa8f1;
     --linear: linear-gradient(110deg, #6f86e2d8 0%, #1d3b96bb 45%, #576aa3b4 100%);
     --linear-alpha: linear-gradient(110deg, #6f86e2b9 0%, #1d3b96a3 45%, #576aa3e4 100%);
@@ -191,7 +216,7 @@ button.cv-button:hover a {
 }
 
 .section {
-    padding-block: 2rem;
+    padding-block: 4rem;
 }
 
 .section:not(.hero.section) {
@@ -308,7 +333,7 @@ header {
 
 .color-toggle {
     margin-inline: auto;
-    width: 5rem;
+    width: 6.5rem;
     height: 1.5rem;
     border-radius: 50%;
     display: flex;
@@ -319,7 +344,8 @@ header {
 
 .circle-beige,
 .circle-pink,
-.circle-blue {
+.circle-blue,
+.circle-silver {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
@@ -329,7 +355,9 @@ header {
 
 .circle-beige::after,
 .circle-pink::after,
-.circle-blue::after {
+.circle-blue::after,
+.circle-silver::after
+ {
     content: '';
     position: absolute;
     inset: 0;
@@ -345,6 +373,9 @@ header {
 }
 .circle-blue::after {
     background: var(--toogle-dark-blue);
+}
+.circle-silver::after {
+    background: var(--toogle-silver-blue);
 }
 
 
@@ -376,20 +407,20 @@ nav ul li:hover a {
     transition: all .3s ease-in-out;
 }
 
-nav ul li:hover a.icon-a {
+nav ul li a:hover .icon-a {
     color: var(--dark);
     box-shadow: 1px 1px 3px var(--dark);
     transition: all .3s ease-in-out;
 }
 
-header.sticky nav ul li:hover a {
-    color: var(--hover);
+header.sticky nav ul li:hover a{
+    color: var(--color);
     transition: all .3s ease-in-out;
 }
 
-header.sticky nav ul li:hover a.icon-a {
-    color: var(--hover);
-    box-shadow: 1px 1px 4px var(--hover);
+header.sticky nav ul li:hover a.icon-a{
+    color: var(--color);
+    box-shadow: 1px 1px 4px var(--color);
     transition: all .3s ease-in-out;
 }
 
@@ -477,9 +508,9 @@ header.sticky nav ul li:hover a.icon-a {
 }
 
 .hero-social ul li:hover a {
-    color: var(--dark);
+    color: var(--color);
     transition: all .3s ease-in-out;
-    box-shadow: 1px 1px 3px var(--dark);
+    box-shadow: 1px 1px 3px var(--color);
 }
 
 /*---------About-----------*/
@@ -569,7 +600,7 @@ header.sticky nav ul li:hover a.icon-a {
 
 .about .skills p {
     background: var(--linear);
-    color: var(--skill);
+    color: var(--skill-1);
     align-self: flex-end;
     padding: 0.5rem 1rem 0.5rem 3rem;
     text-align: right;
@@ -842,7 +873,7 @@ header.sticky nav ul li:hover a.icon-a {
 .contact label,
 .contact ::placeholder,
 .contact button {
-    color: var(--white);
+    color: var(--skill-2);
 }
 
 .contact .button {
@@ -888,13 +919,13 @@ header.sticky nav ul li:hover a.icon-a {
 .contact .textarea textarea:valid~label {
     transform: translateY(-30px);
     font-size: 14px;
-    color: var(--hover);
+    color: var(--contact-dark);
 }
 
 .contact .textarea textarea:focus~label {
     transform: translateY(-120px);
     font-size: 14px;
-    color: var(--hover);
+    color: var(--contact-dark);
 }
 
 .contact .input-data input:focus~.underline:before,
@@ -917,7 +948,7 @@ header.sticky nav ul li:hover a.icon-a {
     content: "";
     height: 2px;
     width: 100%;
-    background: var(--hover);
+    background: var(--contact-dark);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
@@ -986,12 +1017,13 @@ header.sticky nav ul li:hover a.icon-a {
 
 footer {
     background: var(--dark);
+    background: var(--linear-alpha);
     color: var(--white);
 }
 
 footer .container {
     text-align: center;
-    padding-block: 2.5rem;
+    padding-block: 2rem;
     font-size: 1.3rem;
 }
 
@@ -1221,7 +1253,7 @@ main.fade-out {
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 990px) {
 
     html {
         scroll-padding-top: 3.9rem;
@@ -1312,9 +1344,14 @@ main.fade-out {
 
     .color-toggle {
         flex-direction: column;
-        height: 4rem;
-        width: 1rem;
+        height: 6rem;
+        width: 1.5rem;
         scale: .8;
+    }
+
+    .color-toggle div {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     nav ul .color-toggle {
@@ -1371,6 +1408,18 @@ main.fade-out {
     .hero-social ul {
         gap: .6rem;
         font-size: 1.2rem;
+    }
+
+    .color-toggle {
+        flex-direction: column;
+        height: 5rem;
+        width: 1.2rem;
+        scale: .8;
+    }
+
+    .color-toggle div {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 
     .section-title {
@@ -1455,6 +1504,18 @@ main.fade-out {
         gap: .5rem;
         font-size: .9rem;
     }
+
+    .color-toggle {
+        flex-direction: column;
+        height: 4rem;
+        width: 1rem;
+        scale: .8;
+    }
+
+    .color-toggle div {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -1476,6 +1537,18 @@ main.fade-out {
     .hero-social ul {
         gap: .4rem;
         font-size: .7rem;
+    }
+
+    .color-toggle {
+        flex-direction: column;
+        height: 3rem;
+        width: .7rem;
+        scale: .8;
+    }
+
+    .color-toggle div {
+        width: .7rem;
+        height: .7rem;
     }
 
     .section-title {
