@@ -4,5 +4,5 @@ Priskin Zsuzsanna Frontend Programozó
 
 Live Site: https://priskinzsuzsanna.github.io/
 
-Screenshot: 
-![website](https://user-images.githubusercontent.com/121173949/232511744-f89cbd2f-7532-46f7-81f8-4abfa82101f5.png)
+Screenshot: ![git](https://github.com/PriskinZsuzsanna/priskinzsuzsanna.github.io/assets/121173949/95fd88fc-c1b1-46f8-8781-8e5eb662bc2d)
+
